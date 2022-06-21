@@ -8,8 +8,7 @@ public class HelloForem {
             string access_token;
             if (client.authenticate (
                     user,
-                    password,
-                    out access_token))
+                    password))
             {
                 print ("Successfully logged in\n");
             } else {

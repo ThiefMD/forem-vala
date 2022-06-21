@@ -24,13 +24,54 @@ ninja
 ./examples/hello-forem
 ```
 
-Examples require update to username and password, don't check this in
+Examples require update to username and [API key](https://developers.forem.com/api#section/Authentication), don't check this in
 
 ```
 string user = "username";
-string password = "password";
+string key = "api-key";
 ```
 
 # Quick Start
 
-TBD
+## New Login
+
+```vala
+string user = "user";
+string key = "api-key";
+
+Forem.Client client = new Forem.Client ("https://dev.to/");
+if (client.authenticate (
+        user,
+        key))
+{
+    print ("Successfully logged in");
+} else {
+    print ("Could not login");
+}
+```
+
+## Check Logged in User
+
+```vala
+string my_username;
+if (client.get_authenticated_user (out my_username)) {
+    print ("Logged in as: %s\n", my_username);
+}
+```
+
+## Publish a Post
+
+```vala
+string url;
+string id;
+if (client.publish_post (
+    out url,
+    out id,
+    "# Hello Forem!
+
+Hello from [ThiefMD](https://thiefmd.com)!",
+    "Hello Forem!"))
+{
+    print ("Made post: %s\n", url);
+}
+```
