@@ -55,7 +55,7 @@ if (client.authenticate (
 ```vala
 string my_username;
 if (client.get_authenticated_user (out my_username)) {
-    print ("Logged in as: %s\n", my_username);
+    print ("Logged in as: %s", my_username);
 }
 ```
 
@@ -72,6 +72,6 @@ if (client.publish_post (
 Hello from [ThiefMD](https://thiefmd.com)!",
     "Hello Forem!"))
 {
-    print ("Made post: %s\n", url);
+    print ("Made post: %s", url);
 }
 ```
