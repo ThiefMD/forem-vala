@@ -6,6 +6,8 @@ Unofficial [Forem](https://forem.com) API client library for Vala. Still a work 
 
 I recommend including `forem-vala` as a git submodule and adding `forem-vala/src/Forem.vala` to your sources list. This will avoid packaging conflicts and remote build system issues until I learn a better way to suggest this.
 
+For libsoup3, use `forem-vala/src/Forem3.vala`.
+
 ### Requirements
 
 ```
